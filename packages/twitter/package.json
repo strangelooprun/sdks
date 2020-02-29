@@ -1,0 +1,58 @@
+{
+  "name": "@strangelooprun/twitter",
+  "version": "0.1.0",
+  "description": "This library only contains the methods currently needed for Tweet Status and Direct Message work for chatbot development.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strangelooprun/twitter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/strangelooprun/twitter/issues"
+  },
+  "homepage": "https://github.com/strangelooprun/twitter#readme",
+  "author": "Michael Szul <michael@szul.us>",
+  "keywords": [
+    "chatbots",
+    "bots"
+  ],
+  "main": "./lib/index",
+  "types": "./lib/index",
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "check-coverage": true,
+    "lines": 0,
+    "statements": 0,
+    "functions": 0,
+    "branches": 0,
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.test.js"
+    ],
+    "reporter": [
+      "text",
+      "cobertura",
+      "html"
+    ],
+    "report-dir": "./.nyc_output/coverage"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && nyc mocha",
+    "test-ci": "tsc && nyc mocha --reporter xunit --reporter-options output=./mocha-test-results.xml --reporter-options suiteName=$npm_package_name",
+    "eslint": "eslint ./src/*.ts ./src/**/*.ts",
+    "eslint-fix": "eslint ./src/*.ts ./src/**/*.ts --fix"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "typescript": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

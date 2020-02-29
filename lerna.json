@@ -1,0 +1,20 @@
+{
+    "npmClient": "npm",
+    "packages": [
+      "packages/**"
+    ],
+    "version": "independent",
+    "command": {
+      "publish": {
+        "ignoreChanges": [
+          "*.md",
+          "example/**/*.*",
+          ".npmignore",
+          "LICENSE",
+          "tsconfig.json"
+        ],
+        "message": "chore(release): publish"
+      }
+    }
+  }
+  
